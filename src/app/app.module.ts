@@ -7,6 +7,12 @@ import { MasterComponent } from './master/master.component';
 import { ListComponent } from './list/list.component';
 import { ShipmentComponent } from './shipment/shipment.component';
 
+import { HttpModule, JsonpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
+import {NgxPaginationModule} from 'ngx-pagination';
+
+//services
+import {MasterService} from './master/master.service';
 
 @NgModule({
   declarations: [
@@ -17,9 +23,16 @@ import { ShipmentComponent } from './shipment/shipment.component';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
+    HttpClientModule,
+    JsonpModule,
+    NgxPaginationModule,
     //AppRoutingModule,
   ],
-  providers: [],
+  providers: 
+  [
+    MasterService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

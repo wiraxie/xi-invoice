@@ -1,17 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-
+import { Observable } from 'rxjs';
+import { MasterService } from './master.service';
 
 @Component({
   selector: 'app-master',
   templateUrl: './master.component.html',
   styleUrls: ['./master.component.css']
 })
-export class MasterComponent implements OnInit {
+export class MasterComponent implements OnInit
+{
 
-  constructor() { }
+  data : Observable<Array<any>>;
+  anyErrors: Error;
 
-  ngOnInit() {
+  constructor(private masterService: MasterService) {}
+
+  getData()
+  {
+    this.masterService.getData().subscribe(data=>
+    {
+      this.data = data;
+    });
   }
 
+  ngOnInit() 
+  {
+    this.getData();
+  }
 }
