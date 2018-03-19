@@ -9,10 +9,12 @@ import { ShipmentComponent } from './shipment/shipment.component';
 
 import { HttpModule, JsonpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
-import {NgxPaginationModule} from 'ngx-pagination';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 //services
-import {MasterService} from './master/master.service';
+import { MasterService } from './master/master.service';
+import { ListService } from './list/list.service';
+import { ShipmentService } from './shipment/shipment.service';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import {MasterService} from './master/master.service';
   providers: 
   [
     MasterService,
+    ListService,
+    ShipmentService,
   ],
   bootstrap: [AppComponent]
 })

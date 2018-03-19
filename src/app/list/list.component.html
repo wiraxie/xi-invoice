@@ -91,116 +91,35 @@ show per-page:
 <table class="table table-responsive table-striped js-table" id="myTable">
 <thead class="js-thead">
     <tr>
-      <!-- <th>invoice-id</th> -->
       <th>invoice-no.</th>
-      <!-- <th>customer-id</th> -->
       <th>customer-name</th>
       <th>date</th>
       <th>item</th>
       <th>quantity</th>
       <th>price</th>
       <th>discount</th>
-      <!-- <th>total</th> -->
       <th>subtotal</th>
-      <!-- <th>tax</th> -->
-      <!-- <th>shipments</th> -->
       <th>grandtotal</th>
-      <!-- <th>notes</th> -->
       <th>Actions</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <!-- <th>inv01</th> -->
-      <th>150320180001</th>
-      <!-- <th>cst01</th> -->
-      <th>John Doe</th>
-      <th>18/03/2018</th>
-      <th>Steel Door</th>
-      <th>5</th>
-      <th>1000000</th>
-      <th>0</th>
-      <!-- <th>5000000</th> -->
-      <th>5000000</th>
-      <!-- <th>0</th> -->
-      <!-- <th>0</th> -->
-      <th>5000000</th>
-      <!-- <th>PAID</th> -->
-      <th>
+    <tr *ngFor="let items of data">
+      <td>{{items.invoiceNo}}</td>
+      <td>{{items.customerName}}</td>
+      <td>{{items.date}}</td>
+      <td>{{items.item}}</td>
+      <td>{{items.quantity}}</td>
+      <td>{{items.price}}</td>
+      <td>{{items.discount}}</td>
+      <td>{{items.subtotal}}</td>
+      <td>{{items.grandtotal}}</td>
+      <td>
         <button type="button" class="btn btn-sm btn-success">view</button>
         <button type="button" class="btn btn-sm btn-warning">edit</button>
         <button type="button" class="btn btn-sm btn-danger">delete</button>
         <button type="button" class="btn btn-sm"><span class="glyphicon glyphicon-print"></span></button>
-      </th>
-    </tr>
-    <tr>
-      <!-- <th>inv02</th> -->
-      <th>150320180002</th>
-      <!-- <th>cst01</th> -->
-      <th>John Doe</th>
-      <th>18/03/2018</th>
-      <th>Steel Door</th>
-      <th>5</th>
-      <th>1000000</th>
-      <th>0</th>
-      <!-- <th>5000000</th> -->
-      <th>5000000</th>
-      <!-- <th>0</th> -->
-      <!-- <th>0</th> -->
-      <th>5000000</th>
-      <!-- <th>PAID</th> -->
-      <th>
-        <button type="button" class="btn btn-sm btn-success">view</button>
-        <button type="button" class="btn btn-sm btn-warning">edit</button>
-        <button type="button" class="btn btn-sm btn-danger">delete</button>
-        <button type="button" class="btn btn-sm"><span class="glyphicon glyphicon-print"></span></button>
-      </th>
-    </tr>
-    <tr>
-      <!-- <th>inv03</th> -->
-      <th>150320180003</th>
-      <!-- <th>cst02</th> -->
-      <th>Clinton Doe</th>
-      <th>18/03/2018</th>
-      <th>Steel Door</th>
-      <th>5</th>
-      <th>1000000</th>
-      <th>0</th>
-      <!-- <th>5000000</th> -->
-      <th>5000000</th>
-      <!-- <th>0</th> -->
-      <!-- <th>0</th> -->
-      <th>5000000</th>
-      <!-- <th>NOT PAID</th> -->
-      <th>
-        <button type="button" class="btn btn-sm btn-success">view</button>
-        <button type="button" class="btn btn-sm btn-warning">edit</button>
-        <button type="button" class="btn btn-sm btn-danger">delete</button>
-        <button type="button" class="btn btn-sm"><span class="glyphicon glyphicon-print"></span></button>
-      </th>
-    </tr>
-    <tr>
-      <!-- <th>inv04</th> -->
-      <th>150320180004</th>
-      <!-- <th>cst03</th> -->
-      <th>Joe Doe</th>
-      <th>18/03/2018</th>
-      <th>Steel Door</th>
-      <th>5</th>
-      <th>1000000</th>
-      <th>0</th>
-      <!-- <th>5000000</th> -->
-      <th>5000000</th>
-      <!-- <th>0</th> -->
-      <!-- <th>0</th> -->
-      <th>5000000</th>
-      <!-- <th>NOT PAID</th> -->
-      <th>
-        <button type="button" class="btn btn-sm btn-success">view</button>
-        <button type="button" class="btn btn-sm btn-warning">edit</button>
-        <button type="button" class="btn btn-sm btn-danger">delete</button>
-        <button type="button" class="btn btn-sm"><span class="glyphicon glyphicon-print"></span></button>
-      </th>
+      </td>
     </tr>
     </tbody>
 </table>

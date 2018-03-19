@@ -1,0 +1,37 @@
+[
+	{
+		"customerId"	: "190320180001",
+		"customerName" : "John Doe",	
+		"date" : "19-03-2018",
+		"item" : "Door",
+		"quantity": "1"
+	},
+	{
+		"customerId"	: "190320180002",
+		"customerName" : "Brendan",	
+		"date" : "19-03-2018",
+		"item" : "Window",
+		"quantity": "3"
+	},
+	{
+		"customerId"	: "190320180003",
+		"customerName" : "Rick",	
+		"date" : "19-03-2018",
+		"item" : "Desk",
+		"quantity": "2"
+	},
+	{
+		"customerId"	: "190320180004",
+		"customerName" : "Jack",	
+		"date" : "19-03-2018",
+		"item" : "Shelf",
+		"quantity": "5"
+	},
+	{
+		"customerId"	: "190320180005",
+		"customerName" : "Danny",	
+		"date" : "19-03-2018",
+		"item" : "Chair",
+		"quantity": "10"
+	}
+]

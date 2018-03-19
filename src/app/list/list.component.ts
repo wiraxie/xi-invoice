@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { ListService } from './list.service';
 
 @Component({
   selector: 'app-list',
@@ -8,9 +10,22 @@ import { NgForm } from '@angular/forms';
 })
 export class ListComponent implements OnInit {
 
-  constructor() { }
+  data : Observable<Array<any>>;
+  anyErrors: Error;
 
-  ngOnInit() {
+  constructor(private listService: ListService) {}
+
+  getData()
+  {
+    this.listService.getData().subscribe(data=>
+    {
+      this.data = data;
+    });
+  }
+
+  ngOnInit() 
+  {
+    this.getData();
   }
 
 }

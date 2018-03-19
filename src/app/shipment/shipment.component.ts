@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { ShipmentService } from './shipment.service';
 
 @Component({
   selector: 'app-shipment',
@@ -8,9 +10,22 @@ import { NgForm } from '@angular/forms';
 })
 export class ShipmentComponent implements OnInit {
 
-  constructor() { }
+  data : Observable<Array<any>>;
+  anyErrors: Error;
 
-  ngOnInit() {
+  constructor(private shipmentService: ShipmentService) {}
+
+  getData()
+  {
+    this.shipmentService.getData().subscribe(data=>
+    {
+      this.data = data;
+    });
+  }
+
+  ngOnInit() 
+  {
+    this.getData();
   }
 
 }

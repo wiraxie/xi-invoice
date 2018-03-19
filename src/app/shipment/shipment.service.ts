@@ -6,13 +6,13 @@ import 'rxjs/add/operator/map'
 import 'rxjs/Rx';
 
 @Injectable()
-export class MasterService {
+export class ShipmentService {
 
   constructor(private http:Http) { }
 
   data:any=[];
     getData(){
-      return this.http.get("../../assets/master.json")
+      return this.http.get("../../assets/shipment.json")
       .map(res => res.json());
     } 
 
