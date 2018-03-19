@@ -1,4 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { NgForm } from '@angular/forms';
+
 
 @Component({
   selector: 'app-root',
@@ -23,4 +25,8 @@ export class AppComponent implements OnInit{
     this.body.classList.remove('skin-blue');
     this.body.classList.remove('sidebar-mini');
   }
+
+  showMaster:boolean = false;
+  showList:boolean = true;
+  showShipment:Boolean = true;
 }

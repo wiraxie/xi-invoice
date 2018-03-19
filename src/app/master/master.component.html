@@ -1,0 +1,206 @@
+<!-- Content Wrapper. Contains page content -->
+
+  <!-- Content Header (Page header) -->
+  <h3 style="text-align:center">Master Table</h3>
+  
+  <section class="content-header">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Add Data</button>
+  </section>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+            <form>
+                <label>invoice-id</label>
+                <input type="text" class="form-control" id="invoiceId" name="invoiceId"><br>
+
+                <label>invoice-no.</label>
+                <input type="text" class="form-control" id="invoiceNo" name="invoiceNo"><br>
+
+                <label>customer-id</label>
+                <input type="text" class="form-control" id="cstId" name="cstId"><br>
+
+                <label>customer-name</label>
+                <input type="text" class="form-control" id="cstName" name="cstName"><br>
+
+                <label>date</label>
+                <input type="text" class="form-control" id="date" name="date"><br>
+
+                <label>item</label>
+                <input type="text" class="form-control" id="item" name="item"><br>
+
+                <label>quantity</label>
+                <input type="text" class="form-control" id="qty" name="qty"><br>
+
+                <label>price</label>
+                <input type="text" class="form-control" id="price" name="price"><br>
+
+                <!-- <label>discount</label>
+                <input type="text" class="form-control" id="discount" name="discount"><br>
+
+                <label>total</label>
+                <input type="text" class="form-control" id="total" name="total"><br>
+
+                label>subtotal</label>
+                <input type="text" class="form-control" id="subtotal" name="subtotal"><br>
+
+                <label>tax</label>
+                <input type="text" class="form-control" id="tax" name="tax"><br>
+
+                <label>shipments</label>
+                <input type="text" class="form-control" id="shipment" name="shipment"><br>
+
+                <label>grandtotal</label>
+                <input type="text" class="form-control" id="grandtotal" name="grandtotal"><br> -->
+
+                <label>notes</label>
+                <input type="text" class="form-control" id="notes" name="notes"><br>
+                <br>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-sm btn-primary" type="button">Submit</button>
+            <button class="btn btn-sm btn-secondary" type="button" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.Modal -->
+  
+  <!-- Main content -->
+  <section class="content">
+
+    <!-- <div class="container">
+        show per-page:
+        <select name="Show Per Page">
+          <option value="10" class="form-control">10</option>
+          <option value="50" class="form-control">50</option>
+          <option value="100" class="form-control">100</option>
+        </select>
+    </div> -->
+    
+    <div class="input-group" style="max-width: 35%; float: right;">
+      <span class="input-group-btn">
+        <button class="btn btn-sm btn-default" disabled type="button">Search</button>
+      </span>
+      <input type="text" id="js-search" placeholder="Type to search..." class="form-control"/>
+    </div>
+
+    <table class="table table-responsive table-striped js-table" id="myTable">
+      <thead class="js-thead">
+        <tr>
+          <th><span class="glyphicon glyphicon-triangle-bottom"></span>invoice-id</th>
+          <th><span class="glyphicon glyphicon-triangle-bottom"></span>invoice-no.</th>
+          <th><span class="glyphicon glyphicon-triangle-bottom"></span>customer-id</th>
+          <th><span class="glyphicon glyphicon-triangle-bottom"></span>customer-name</th>
+          <th>date</th>
+          <th><span class="glyphicon glyphicon-triangle-bottom"></span>item</th>
+          <th><span class="glyphicon glyphicon-triangle-bottom"></span>quantity</th>
+          <th><span class="glyphicon glyphicon-triangle-bottom"></span>price</th>
+          <!-- <th>discount</th>
+          <th>total</th>
+          <th>subtotal</th>
+          <th>tax</th>
+          <th>shipments</th>
+          <th>grandtotal</th>-->
+          <th>notes</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>inv01</th>
+          <th>150320180001</th>
+          <th>cst01</th>
+          <th>John Doe</th>
+          <th>18/03/2018</th>
+          <th>Steel Door</th>
+          <th>5</th>
+          <th>1000000</th>
+          <!--<th>0</th>
+          <th>5000000</th>
+          <th>5000000</th>
+          <th>0</th>
+          <th>0</th>
+          <th>5000000</th> -->
+          <th>PAID</th>
+          <th>
+            <button type="button" class="btn btn-sm btn-success">view</button>
+            <button type="button" class="btn btn-sm btn-warning">edit</button>
+            <button type="button" class="btn btn-sm btn-danger">delete</button>
+          </th>
+        </tr>
+        <tr>
+          <th>inv02</th>
+          <th>150320180002</th>
+          <th>cst01</th>
+          <th>John Doe</th>
+          <th>18/03/2018</th>
+          <th>Window</th>
+          <th>5</th>
+          <th>1000000</th>
+          <!--<th>0</th>
+          <th>5000000</th>
+          <th>5000000</th>
+          <th>0</th>
+          <th>0</th>
+          <th>5000000</th> -->
+          <th>PAID</th>
+          <th>
+            <button type="button" class="btn btn-sm btn-success">view</button>
+            <button type="button" class="btn btn-sm btn-warning">edit</button>
+            <button type="button" class="btn btn-sm btn-danger">delete</button>
+          </th>
+        </tr>
+        <tr>
+          <th>inv03</th>
+          <th>150320180003</th>
+          <th>cst02</th>
+          <th>Clinton Doe</th>
+          <th>18/03/2018</th>
+          <th>Chair</th>
+          <th>5</th>
+          <th>1000000</th>
+          <!--<th>0</th>
+          <th>5000000</th>
+          <th>5000000</th>
+          <th>0</th>
+          <th>0</th>
+          <th>5000000</th>-->
+          <th>NOT PAID</th>
+          <th>
+            <button type="button" class="btn btn-sm btn-success">view</button>
+            <button type="button" class="btn btn-sm btn-warning">edit</button>
+            <button type="button" class="btn btn-sm btn-danger">delete</button>
+          </th>
+        </tr>
+        <tr>
+          <th>inv04</th>
+          <th>150320180004</th>
+          <th>cst03</th>
+          <th>Joe Doe</th>
+          <th>18/03/2018</th>
+          <th>Table</th>
+          <th>5</th>
+          <th>1000000</th>
+          <!--<th>0</th>
+          <th>5000000</th>
+          <th>5000000</th>
+          <th>0</th>
+          <th>0</th>
+          <th>5000000</th>-->
+          <th>NOT PAID</th>
+          <th>
+            <button type="button" class="btn btn-sm btn-success">view</button>
+            <button type="button" class="btn btn-sm btn-warning">edit</button>
+            <button type="button" class="btn btn-sm btn-danger">delete</button>
+          </th>
+        </tr>
+      </tbody>
+  </table>
+  </section>
+  <!-- /.content -->
+
+<!-- /.content-wrapper -->
