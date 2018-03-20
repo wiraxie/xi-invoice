@@ -81,12 +81,12 @@ show per-page:
 </select>
 </div> -->
 
-<div class="input-group" style="max-width: 35%; float: right;">
-<span class="input-group-btn">
-  <button class="btn btn-sm btn-default" disabled type="button">Search</button>
-</span>
-<input type="text" id="js-search" placeholder="Type to search..." class="form-control"/>
-</div>
+<form class="input-group" style="max-width: 35%; float: right;" id="filter">
+  <span class="input-group-btn">
+    <button class="btn btn-sm btn-default" disabled type="button">Search</button>
+  </span>
+  <input name="term" [(ngModel)]="term" placeholder="search customer name" class="form-control"/>
+</form>
 
 <table class="table table-responsive table-striped js-table" id="myTable">
 <thead class="js-thead">
@@ -100,7 +100,7 @@ show per-page:
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let items of data">
+    <tr *ngFor="let items of data | search: term | paginate: { itemsPerPage: 4, currentPage: p }">
       <td>{{items.customerId}}</td>
       <td>{{items.customerName}}</td>
       <td>{{items.date}}</td>
@@ -115,5 +115,6 @@ show per-page:
   </tbody>
 </table>
 
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
 </section>
 <!-- /.content -->

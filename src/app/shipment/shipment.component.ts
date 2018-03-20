@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { ShipmentService } from './shipment.service';
+import { SearchPipe } from '../search.pipe';
 
 @Component({
   selector: 'app-shipment',
@@ -27,5 +28,7 @@ export class ShipmentComponent implements OnInit {
   {
     this.getData();
   }
+
+  p:number = 1;
 
 }

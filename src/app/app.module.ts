@@ -16,12 +16,15 @@ import { MasterService } from './master/master.service';
 import { ListService } from './list/list.service';
 import { ShipmentService } from './shipment/shipment.service';
 
+import { SearchPipe } from './search.pipe';
+
 @NgModule({
   declarations: [
     AppComponent,
     MasterComponent,
     ListComponent,
     ShipmentComponent,
+    SearchPipe,
   ],
   imports: [
     BrowserModule,
@@ -29,6 +32,7 @@ import { ShipmentService } from './shipment/shipment.service';
     HttpClientModule,
     JsonpModule,
     NgxPaginationModule,
+    FormsModule
     //AppRoutingModule,
   ],
   providers: 

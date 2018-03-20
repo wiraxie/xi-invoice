@@ -61,14 +61,14 @@
         </select>
     </div> -->
     
-    <div class="input-group" style="max-width: 35%; float: right;">
+    <form class="input-group" style="max-width: 35%; float: right;" id="filter">
       <span class="input-group-btn">
         <button class="btn btn-sm btn-default" disabled type="button">Search</button>
       </span>
-      <input type="text" id="js-search" placeholder="Type to search..." class="form-control"/>
-    </div>
+      <input name="term" [(ngModel)]="term" placeholder="search customer name" class="form-control"/>
+    </form>
 
-    <table class="table table-responsive table-striped js-table" id="myTable">
+    <table class="table table-responsive table-striped js-table">
       <thead class="js-thead">
         <tr>
           <th>invoiceId</th>
@@ -84,7 +84,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr  *ngFor="let items of data">
+        <tr *ngFor="let items of data | search: term | paginate: { itemsPerPage: 4, currentPage: p }">
           <td>{{items.invoiceId}}</td>
           <td>{{items.invoiceNo}}</td>
           <td>{{items.customerId}}</td>
@@ -104,5 +104,5 @@
   </table>
   </section>
   <!-- /.content -->
-
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>  
 <!-- /.content-wrapper -->
